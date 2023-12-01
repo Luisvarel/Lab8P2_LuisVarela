@@ -73,7 +73,21 @@ public class main extends javax.swing.JFrame {
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        concesionaria_locacion = new javax.swing.JTextField();
+        concesionaria_nombre = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        longitud = new javax.swing.JTextField();
+        curvas = new javax.swing.JTextField();
+        locacion = new javax.swing.JTextField();
+        tipo_carrera = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -283,29 +297,51 @@ public class main extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Agregar carro", jPanel1);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 815, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 403, Short.MAX_VALUE)
-        );
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel16.setText("Nombre");
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, -1));
+
+        jLabel17.setText("locacion");
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
+
+        jButton4.setText("listo");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 96, -1));
+        jPanel3.add(concesionaria_locacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 88, -1));
+        jPanel3.add(concesionaria_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 88, -1));
 
         jTabbedPane2.addTab("Agregar concesionaria", jPanel3);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 815, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 403, Short.MAX_VALUE)
-        );
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setText("Longitud");
+        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 75, -1, -1));
+
+        jLabel6.setText("Cantidad de curvas ");
+        jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 112, -1, -1));
+
+        jLabel7.setText(" Tipo de carreras");
+        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 149, -1, -1));
+
+        jLabel15.setText("Locacion");
+        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 182, -1, -1));
+
+        jButton3.setText("listo");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 277, 96, -1));
+        jPanel5.add(longitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 73, 88, -1));
+        jPanel5.add(curvas, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 110, 88, -1));
+        jPanel5.add(locacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 180, 88, -1));
+        jPanel5.add(tipo_carrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 147, 88, -1));
 
         jTabbedPane2.addTab("Agregar circuito", jPanel5);
 
@@ -442,6 +478,14 @@ public class main extends javax.swing.JFrame {
         admin.setVisible(false);
         iniciar_crear.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
     public boolean validacion_nombre_usuario_mismo_nombre() {
         adminjugador j = new adminjugador("./Usuario.usr");
         for (jugador object : j.getlistajugador()) {
@@ -542,6 +586,9 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField Pais;
     private javax.swing.JTextField Usuario;
     private javax.swing.JPanel admin;
+    private javax.swing.JTextField concesionaria_locacion;
+    private javax.swing.JTextField concesionaria_nombre;
+    private javax.swing.JTextField curvas;
     private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JProgressBar i_barra;
     private javax.swing.JTextField i_contrasena;
@@ -549,15 +596,23 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPanel iniciar_crear;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -569,8 +624,11 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTextField locacion;
+    private javax.swing.JTextField longitud;
     private javax.swing.JTextField nombre;
     private javax.swing.JPanel pbar_iniciar;
+    private javax.swing.JTextField tipo_carrera;
     private javax.swing.JPanel usuario;
     // End of variables declaration//GEN-END:variables
 }
