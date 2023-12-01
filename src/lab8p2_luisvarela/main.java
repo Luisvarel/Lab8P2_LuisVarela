@@ -21,10 +21,9 @@ public class main extends javax.swing.JFrame {
         initComponents();
         iniciar_crear.setVisible(true);
         pbar_iniciar.setVisible(false);
+        usuario.setVisible(false);
+        admin.setVisible(false);
         adminjugador j = new adminjugador("./Usuario.usr");
-        j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "a", "a"));
-        j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "a", "a"));
-        j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "a", "a"));
         j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "a", "a"));
         i_barra.setStringPainted(true);
         j.escribirArchivo();
@@ -40,6 +39,7 @@ public class main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        usuario = new javax.swing.JPanel();
         iniciar_crear = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -69,8 +69,18 @@ public class main extends javax.swing.JFrame {
         pbar_iniciar = new javax.swing.JPanel();
         i_barra = new javax.swing.JProgressBar();
         jLabel4 = new javax.swing.JLabel();
+        admin = new javax.swing.JPanel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        usuario.setMinimumSize(new java.awt.Dimension(790, 540));
+        usuario.setPreferredSize(new java.awt.Dimension(790, 540));
+        usuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         iniciar_crear.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -256,6 +266,59 @@ public class main extends javax.swing.JFrame {
         jLabel4.setText("Buscando Usuario");
         pbar_iniciar.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 110, -1));
 
+        admin.setMinimumSize(new java.awt.Dimension(790, 540));
+        admin.setPreferredSize(new java.awt.Dimension(790, 540));
+        admin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 815, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 403, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Agregar carro", jPanel1);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 815, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 403, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Agregar concesionaria", jPanel3);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 815, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 403, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Agregar circuito", jPanel5);
+
+        admin.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 820, 430));
+
+        jButton1.setText("<-");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        admin.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -263,12 +326,26 @@ public class main extends javax.swing.JFrame {
             .addComponent(iniciar_crear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(pbar_iniciar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(usuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(iniciar_crear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(pbar_iniciar, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(usuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -346,14 +423,25 @@ public class main extends javax.swing.JFrame {
 
             i_barra.setMinimum(0);
             h_i.start();
-//            if (i_usuario.getText().equals("admin") && i_contrasena.getText().equals("admin")) {
-            iniciar_crear.setVisible(false);
-            pbar_iniciar.setVisible(true);
-//            }
+            boolean acabo = false;
+            while (!acabo) {
+                if (i_barra.getValue() == i_barra.getMaximum()) {
+                    acabo = true;
+                    System.out.println("ya");
+                }
+            }
+            if (i_usuario.getText().equals("admin") && i_contrasena.getText().equals("admin")) {
+
+            }
         } else {
 
         }
     }//GEN-LAST:event_ListoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        admin.setVisible(false);
+        iniciar_crear.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
     public boolean validacion_nombre_usuario_mismo_nombre() {
         adminjugador j = new adminjugador("./Usuario.usr");
         for (jugador object : j.getlistajugador()) {
@@ -453,11 +541,13 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton Listo;
     private javax.swing.JTextField Pais;
     private javax.swing.JTextField Usuario;
+    private javax.swing.JPanel admin;
     private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JProgressBar i_barra;
     private javax.swing.JTextField i_contrasena;
     private javax.swing.JTextField i_usuario;
     private javax.swing.JPanel iniciar_crear;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -470,12 +560,17 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField nombre;
     private javax.swing.JPanel pbar_iniciar;
+    private javax.swing.JPanel usuario;
     // End of variables declaration//GEN-END:variables
 }
