@@ -4,6 +4,7 @@
  */
 package lab8p2_luisvarela;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -11,7 +12,8 @@ import java.util.Date;
  *
  * @author Luis Andres Varela
  */
-public class jugador {
+public class jugador implements Serializable {
+
     private String nombre;
     private String correo;
     private String pais_residencia;
@@ -20,6 +22,7 @@ public class jugador {
     private String usuario;
     private String contrasena;
     private ArrayList<carro> c = new ArrayList();
+    private static final long SerialVersionUID = 555L;
 
     public jugador(String nombre, String correo, String pais_residencia, Date nacimiento, String usuario, String contrasena) {
         this.nombre = nombre;
@@ -89,7 +92,7 @@ public class jugador {
 
     @Override
     public String toString() {
-        return "Usuario:"+usuario;
+        return "Usuario:" + usuario;
     }
 
 }

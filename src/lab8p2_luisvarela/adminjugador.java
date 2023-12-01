@@ -21,6 +21,8 @@ public class adminjugador {
     private ArrayList<jugador> listajugador = new ArrayList();
     private File archivo = null;
 
+   
+
     public adminjugador(String path) {
         archivo = new File(path);
     }

@@ -19,6 +19,16 @@ public class main extends javax.swing.JFrame {
      */
     public main() {
         initComponents();
+        iniciar_crear.setVisible(true);
+        pbar_iniciar.setVisible(false);
+        adminjugador j = new adminjugador("./Usuario.usr");
+        j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "a", "a"));
+        j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "a", "a"));
+        j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "a", "a"));
+        j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "a", "a"));
+        i_barra.setStringPainted(true);
+        j.escribirArchivo();
+
     }
 
     /**
@@ -30,14 +40,14 @@ public class main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        iniciar_crear = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        i_usuario = new javax.swing.JTextField();
+        i_contrasena = new javax.swing.JTextField();
         Listo = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -56,10 +66,13 @@ public class main extends javax.swing.JFrame {
         Usuario = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         fecha = new com.toedter.calendar.JDateChooser();
+        pbar_iniciar = new javax.swing.JPanel();
+        i_barra = new javax.swing.JProgressBar();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        iniciar_crear.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Iniciar Sesion");
 
@@ -67,15 +80,23 @@ public class main extends javax.swing.JFrame {
 
         jLabel3.setText("Contraseña");
 
-        Listo.setText("jButton1");
+        Listo.setText("listo");
+        Listo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(207, 207, 207)
+                .addGap(229, 229, 229)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(Listo, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -84,30 +105,27 @@ public class main extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(i_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Listo, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4)))
-                .addContainerGap(328, Short.MAX_VALUE))
+                            .addComponent(i_contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(306, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(97, 97, 97)
                 .addComponent(jLabel1)
                 .addGap(33, 33, 33)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(i_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(i_contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65)
                 .addComponent(Listo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Iniciar Sesion", jPanel2);
@@ -227,24 +245,37 @@ public class main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Registro", jPanel4);
 
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 780, 510));
+        iniciar_crear.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 780, 510));
+
+        pbar_iniciar.setMinimumSize(new java.awt.Dimension(790, 540));
+        pbar_iniciar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        i_barra.setToolTipText("");
+        pbar_iniciar.add(i_barra, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 570, 45));
+
+        jLabel4.setText("Buscando Usuario");
+        pbar_iniciar.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 110, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .addComponent(iniciar_crear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(pbar_iniciar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(iniciar_crear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(pbar_iniciar, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if (nombre.getText() != null || Correo.getText() != null || Pais.getText() != null || Usuario.getText() != null || Contrasena.getText() != null) {
+        if (nombre.getText() != null && Correo.getText() != null && Pais.getText() != null && Usuario.getText() != null && Contrasena.getText() != null) {
             boolean cumple_edad = validacion_fecha();
             if (cumple_edad) {
                 boolean nombre_usuario = validacion_nombre_usuario_mismo_nombre();
@@ -253,10 +284,17 @@ public class main extends javax.swing.JFrame {
                     if (contasena_no_valida) {
                         adminjugador j = new adminjugador("./Usuario.usr");
                         j.getlistajugador().add(new jugador(nombre.getText(), Correo.getText(), Pais.getText(), fecha.getDate(), Usuario.getText(), Contrasena.getText()));
+                        j.escribirArchivo();
+                        nombre.setText("");
+                        Correo.setText("");
+                        Pais.setText("");
+                        fecha.setDate(new Date());
+                        Usuario.setText("");
+                        Contrasena.setText("");
 
                         JOptionPane.showMessageDialog(this, "Se a registrado exitosamente");
                     } else {
-                        JOptionPane.showMessageDialog(this, "Esta contraseña no es valida porque debe de:\nContener mínimo una letra mayúscula \nUna minúscula\nUn carácter especial");
+                        JOptionPane.showMessageDialog(this, "Esta contraseña no es valida porque debe de:\nContener mínimo una letra mayúscula \nUna minúscula\nUn arácter especial");
                     }
                 } else {
                     JOptionPane.showMessageDialog(this, "Este nombre de usuario ya fue tomado");
@@ -292,6 +330,30 @@ public class main extends javax.swing.JFrame {
     private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreActionPerformed
+
+    private void ListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListoActionPerformed
+        if (i_usuario.getText() != null && i_contrasena.getText() != null) {
+            hilo_inciar h_i = new hilo_inciar(i_barra);
+            adminjugador j = new adminjugador("./Usuario.usr");
+            j.cargarArchivo();
+            i_barra.setMaximum(j.getlistajugador().size());
+            for (jugador object : j.getlistajugador()) {
+                if (i_usuario.getText().equals(object.getUsuario()) && i_contrasena.getText().equals(object.getContrasena())) {
+                    i_barra.setMaximum((j.getlistajugador().indexOf(object) + 1));
+                    break;
+                }
+            }
+
+            i_barra.setMinimum(0);
+            h_i.start();
+//            if (i_usuario.getText().equals("admin") && i_contrasena.getText().equals("admin")) {
+            iniciar_crear.setVisible(false);
+            pbar_iniciar.setVisible(true);
+//            }
+        } else {
+
+        }
+    }//GEN-LAST:event_ListoActionPerformed
     public boolean validacion_nombre_usuario_mismo_nombre() {
         adminjugador j = new adminjugador("./Usuario.usr");
         for (jugador object : j.getlistajugador()) {
@@ -392,6 +454,10 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField Pais;
     private javax.swing.JTextField Usuario;
     private com.toedter.calendar.JDateChooser fecha;
+    private javax.swing.JProgressBar i_barra;
+    private javax.swing.JTextField i_contrasena;
+    private javax.swing.JTextField i_usuario;
+    private javax.swing.JPanel iniciar_crear;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -401,16 +467,15 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField nombre;
+    private javax.swing.JPanel pbar_iniciar;
     // End of variables declaration//GEN-END:variables
 }
