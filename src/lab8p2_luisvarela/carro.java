@@ -27,10 +27,23 @@ public class carro {
     Super builds 4 precio de la mejora 8800
      */
     private String pais;
-    private Date year_fabricación;
+    private int year_fabricación;
     private int Horsepower;
     private int Velocidad_Punta;
     private int Tiempo;
+
+    public carro(boolean reconstruido, String marca, String modelo, Color color, int precio, String pais, int year_fabricación, int Horsepower, int Velocidad_Punta, int Tiempo) {
+        this.reconstruido = reconstruido;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.color = color;
+        this.precio = precio;
+        this.pais = pais;
+        this.year_fabricación = year_fabricación;
+        this.Horsepower = Horsepower;
+        this.Velocidad_Punta = Velocidad_Punta;
+        this.Tiempo = Tiempo;
+    }
 
     public boolean isReconstruido() {
         return reconstruido;

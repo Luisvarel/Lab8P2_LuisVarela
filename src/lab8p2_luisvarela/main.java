@@ -4,8 +4,10 @@
  */
 package lab8p2_luisvarela;
 
+import java.awt.Color;
 import java.util.Date;
 import javax.swing.DefaultListModel;
+import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -98,21 +100,23 @@ public class main extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         marca_c = new javax.swing.JComboBox<>();
         jLabel21 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
+        carro_color = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        precio_carro = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        jYearChooser1 = new com.toedter.calendar.JYearChooser();
+        year = new com.toedter.calendar.JYearChooser();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        velocidad_punta = new javax.swing.JTextField();
+        reconstruido = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         pais_c = new javax.swing.JComboBox<>();
         jButton5 = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        cb_tiempo = new javax.swing.JComboBox<>();
+        jLabel29 = new javax.swing.JLabel();
+        caballero_fuerza1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -388,38 +392,46 @@ public class main extends javax.swing.JFrame {
         jLabel21.setText("Modelo");
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 40, 10));
 
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        carro_color.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel23MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout carro_colorLayout = new javax.swing.GroupLayout(carro_color);
+        carro_color.setLayout(carro_colorLayout);
+        carro_colorLayout.setHorizontalGroup(
+            carro_colorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        carro_colorLayout.setVerticalGroup(
+            carro_colorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 150, 30));
+        jPanel1.add(carro_color, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 150, 30));
 
         jLabel22.setText("Color");
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 40, 10));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 150, 30));
+        jPanel1.add(precio_carro, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 150, 30));
 
         jLabel24.setText("Precio");
         jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 40, 10));
 
-        jYearChooser1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jYearChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 90, 30));
+        year.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(year, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 90, 30));
 
-        jLabel25.setText(" Año de fabricación");
-        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 100, 10));
+        jLabel25.setText("reconstruido");
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, 70, 10));
 
         jLabel26.setText("Horsepower");
         jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 70, 10));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 100, 30));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 100, 30));
+        jPanel1.add(velocidad_punta, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 100, 30));
+
+        reconstruido.setText("si o no");
+        jPanel1.add(reconstruido, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, 100, 30));
 
         jLabel27.setText("Concesionaria");
         jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
@@ -433,13 +445,22 @@ public class main extends javax.swing.JFrame {
         jPanel1.add(pais_c, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 150, 32));
 
         jButton5.setText("listo");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 160, 50));
 
         jLabel28.setText("Tiempo");
         jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, -1, -1));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0 a 60 km/h ", "0 a 100 km/h" }));
-        jPanel1.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 150, 32));
+        cb_tiempo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0 a 60 km/h ", "0 a 100 km/h" }));
+        jPanel1.add(cb_tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 150, 32));
+
+        jLabel29.setText(" Año de fabricación");
+        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 100, 10));
+        jPanel1.add(caballero_fuerza1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 100, 30));
 
         jTabbedPane2.addTab("Agregar carro", jPanel1);
 
@@ -709,6 +730,27 @@ public class main extends javax.swing.JFrame {
                 throw new AssertionError();
         }
     }//GEN-LAST:event_marca_cMouseClicked
+
+    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
+       Color color=JColorChooser.showDialog(this, "Color del carro", Color.yellow);
+       carro_color.setBackground(color);
+    }//GEN-LAST:event_jLabel23MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        boolean recontruido_b=false;
+        if (reconstruido.getText().equalsIgnoreCase("si")) {
+            recontruido_b=true;
+        }else{
+            recontruido_b=false;
+        }
+        int temp1=0;
+        if (cb_tiempo.getSelectedIndex()==0) {
+            temp1=60;
+        }else{
+            temp1=100;
+        }
+        carro temp=new carro(recontruido_b, (String)marca_c.getSelectedItem(),(String) modelo_c.getSelectedItem(), carro_color.getBackground(),  Integer.parseInt(precio_carro.getText()), pais_c.getSelectedItem(), year.getYear(), Integer.parseInt(caballero_fuerza1.getText()), Integer.parseInt(velocidad_punta.getText()),temp1 );
+    }//GEN-LAST:event_jButton5ActionPerformed
     public boolean validacion_nombre_usuario_mismo_nombre() {
         adminjugador j = new adminjugador("./Usuario.usr");
         for (jugador object : j.getlistajugador()) {
@@ -809,7 +851,10 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField Pais;
     private javax.swing.JTextField Usuario;
     private javax.swing.JPanel admin;
+    private javax.swing.JTextField caballero_fuerza1;
+    private javax.swing.JPanel carro_color;
     private javax.swing.JComboBox<String> cb_concesionaria;
+    private javax.swing.JComboBox<String> cb_tiempo;
     private javax.swing.JTextField concesionaria_locacion;
     private javax.swing.JTextField concesionaria_nombre;
     private javax.swing.JTextField curvas;
@@ -823,7 +868,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -845,6 +889,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -858,14 +903,9 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private com.toedter.calendar.JYearChooser jYearChooser1;
     private javax.swing.JTextField locacion;
     private javax.swing.JTextField longitud;
     private javax.swing.JComboBox<String> marca_c;
@@ -873,7 +913,11 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField nombre;
     private javax.swing.JComboBox<String> pais_c;
     private javax.swing.JPanel pbar_iniciar;
+    private javax.swing.JTextField precio_carro;
+    private javax.swing.JTextField reconstruido;
     private javax.swing.JTextField tipo_carrera;
     private javax.swing.JPanel usuario;
+    private javax.swing.JTextField velocidad_punta;
+    private com.toedter.calendar.JYearChooser year;
     // End of variables declaration//GEN-END:variables
 }
