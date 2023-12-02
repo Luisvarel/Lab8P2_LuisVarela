@@ -91,7 +91,7 @@ public class main extends javax.swing.JFrame {
         locacion = new javax.swing.JTextField();
         tipo_carrera = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        modelo_c = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         cb_concesionaria = new javax.swing.JComboBox<>();
@@ -365,7 +365,7 @@ public class main extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 150, 32));
+        jPanel1.add(modelo_c, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 150, 32));
 
         jLabel18.setText("Velocidad_Punta");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 90, 10));
@@ -633,7 +633,75 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_pais_cMouseClicked
 
     private void marca_cMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_marca_cMouseClicked
-        
+        String marca = ((String) marca_c.getSelectedItem());
+        modelo_c.removeAllItems();
+        switch (marca) {
+            case "Subaru" -> {
+                modelo_c.addItem("BRZ");
+                modelo_c.addItem("Impreza");
+                modelo_c.addItem("WPZ-X");
+            }
+            case "Toyota" -> {
+                modelo_c.addItem("GT-86");
+                modelo_c.addItem("Supra");
+            }
+            case "Honda" -> {
+                modelo_c.addItem("Civic Type-R");
+                modelo_c.addItem("Integra Type-K");
+                modelo_c.addItem("CR-X");
+            }
+            case "Nissan" -> {
+                modelo_c.addItem("Skyline-GTR34");
+                modelo_c.addItem("Skyline-GTR32");
+                modelo_c.addItem("GTR-R35");
+            }
+            case "Ferrari" -> {
+                modelo_c.addItem("LaFerrari");
+                modelo_c.addItem("Testorroso");
+                modelo_c.addItem("240");
+
+            }
+            case "Lamborghini" -> {
+                modelo_c.addItem("Diablo");
+                modelo_c.addItem("Huracan");
+                modelo_c.addItem("Murcielago");
+            }
+            case "Ford" -> {
+                modelo_c.addItem("Mustang");
+                modelo_c.addItem("F-150");
+            }
+            case "Chevrolet" -> {
+                modelo_c.addItem("Camaro");
+                modelo_c.addItem("Bel-Hir");
+            }
+            case "Acorh" -> {
+                modelo_c.addItem("NSX");
+            }
+            case "BWW" -> {
+                modelo_c.addItem("M3");
+                modelo_c.addItem("X6");
+                modelo_c.addItem("M5");
+            }
+            case "Mercedes" -> {
+                modelo_c.addItem("Clase A");
+                modelo_c.addItem("GLA");
+                modelo_c.addItem("GLC");
+                modelo_c.addItem("GLS");
+            }
+            case "VW" -> {
+                modelo_c.addItem("Beetle");
+            }
+            case "Audi" -> {
+                modelo_c.addItem("RB");
+                modelo_c.addItem("T-Coupe");
+            }
+            case "Porsche" -> {
+                modelo_c.addItem("All Carrera");
+                modelo_c.addItem("978");
+            }
+            default ->
+                throw new AssertionError();
+        }
     }//GEN-LAST:event_marca_cMouseClicked
     public boolean validacion_nombre_usuario_mismo_nombre() {
         adminjugador j = new adminjugador("./Usuario.usr");
@@ -749,7 +817,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -796,6 +863,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField locacion;
     private javax.swing.JTextField longitud;
     private javax.swing.JComboBox<String> marca_c;
+    private javax.swing.JComboBox<String> modelo_c;
     private javax.swing.JTextField nombre;
     private javax.swing.JComboBox<String> pais_c;
     private javax.swing.JPanel pbar_iniciar;
