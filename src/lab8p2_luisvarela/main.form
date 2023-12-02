@@ -882,14 +882,11 @@
                 <Component class="javax.swing.JComboBox" name="pais_c">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="7">
+                      <StringArray count="4">
                         <StringItem index="0" value="Usa"/>
                         <StringItem index="1" value="Alemania"/>
-                        <StringItem index="2" value="Francia"/>
-                        <StringItem index="3" value="Japon"/>
-                        <StringItem index="4" value="Italia"/>
-                        <StringItem index="5" value="Uk"/>
-                        <StringItem index="6" value="Sweden"/>
+                        <StringItem index="2" value="Japon"/>
+                        <StringItem index="3" value="Italia"/>
                       </StringArray>
                     </Property>
                   </Properties>

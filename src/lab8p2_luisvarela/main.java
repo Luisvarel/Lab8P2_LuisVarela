@@ -19,10 +19,10 @@ public class main extends javax.swing.JFrame {
      */
     public main() {
         initComponents();
-        iniciar_crear.setVisible(true);
+        iniciar_crear.setVisible(false   );
         pbar_iniciar.setVisible(false);
         usuario.setVisible(false);
-        admin.setVisible(false);
+        admin.setVisible(true);
         adminjugador j = new adminjugador("./Usuario.usr");
         j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "a", "a"));
         j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "s", "s"));
@@ -424,7 +424,7 @@ public class main extends javax.swing.JFrame {
         jLabel27.setText("Concesionaria");
         jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
 
-        pais_c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usa", "Alemania", "Francia", "Japon", "Italia", "Uk", "Sweden" }));
+        pais_c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usa", "Alemania", "Japon", "Italia" }));
         pais_c.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pais_cMouseClicked(evt);
@@ -543,7 +543,10 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_nombreActionPerformed
 
     private void ListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListoActionPerformed
-        if (i_usuario.getText() != null && i_contrasena.getText() != null) {
+        if (i_usuario.getText().equals("admin") && i_contrasena.getText().equals("admin")) {
+            admin.setVisible(true);
+            iniciar_crear.setVisible(false);
+        } else if (i_usuario.getText() != null && i_contrasena.getText() != null) {
             hilo_inciar h_i = new hilo_inciar(i_barra, pbar_iniciar, usuario, iniciar_crear);
             adminjugador j = new adminjugador("./Usuario.usr");
             j.cargarArchivo();
@@ -554,9 +557,6 @@ public class main extends javax.swing.JFrame {
                     usuario_no_encontrado = false;
                     break;
                 }
-            }
-            if (usuario_no_encontrado) {
-                i_barra.setMaximum((j.getlistajugador().size() + 1));
             }
             i_barra.setMinimum(0);
             iniciar_crear.setVisible(false);
@@ -601,40 +601,42 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jTabbedPane2StateChanged
 
     private void pais_cMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pais_cMouseClicked
-        String pais = ((String) pais_c.getSelectedItem());
+        String pais = (String) pais_c.getSelectedItem();
         marca_c.removeAllItems();
+
         switch (pais) {
-            case "Japon" -> {
+            case "Japon":
                 marca_c.addItem("Subaru");
                 marca_c.addItem("Toyota");
                 marca_c.addItem("Honda");
                 marca_c.addItem("Mitsubishi");
                 marca_c.addItem("Nissan");
-            }
-            case "Italia" -> {
+                break;
+            case "Italia":
                 marca_c.addItem("Ferrari");
                 marca_c.addItem("Lamborghini");
-            }
-            case "USA" -> {
+                break;
+            case "USA":
                 marca_c.addItem("Ford");
-                marca_c.addItem("Chevarolet");
+                marca_c.addItem("Chevrolet");
                 marca_c.addItem("Acorh");
-            }
-            case "Alemania" -> {
+                break;
+            case "Alemania":
                 marca_c.addItem("BWW");
                 marca_c.addItem("Mercedes-Benz");
                 marca_c.addItem("VW");
                 marca_c.addItem("Audi");
                 marca_c.addItem("Porsche");
-            }
-            default ->
+                break;
+            default:
                 throw new AssertionError();
         }
     }//GEN-LAST:event_pais_cMouseClicked
 
     private void marca_cMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_marca_cMouseClicked
-        String marca = ((String) marca_c.getSelectedItem());
+        String marca = (String) marca_c.getSelectedItem();
         modelo_c.removeAllItems();
+
         switch (marca) {
             case "Subaru" -> {
                 modelo_c.addItem("BRZ");
@@ -670,7 +672,7 @@ public class main extends javax.swing.JFrame {
                 modelo_c.addItem("Mustang");
                 modelo_c.addItem("F-150");
             }
-            case "Chevrolet" -> {
+            case "Chevarolet" -> {
                 modelo_c.addItem("Camaro");
                 modelo_c.addItem("Bel-Hir");
             }
