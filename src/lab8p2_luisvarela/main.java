@@ -48,8 +48,9 @@ public class main extends javax.swing.JFrame {
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla_garage = new javax.swing.JTable();
         jProgressBar1 = new javax.swing.JProgressBar();
+        jButton7 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -137,7 +138,7 @@ public class main extends javax.swing.JFrame {
         usuario.setPreferredSize(new java.awt.Dimension(790, 540));
         usuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_garage.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -153,7 +154,14 @@ public class main extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabla_garage);
+
+        jButton7.setText("actualizar");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -166,8 +174,10 @@ public class main extends javax.swing.JFrame {
                         .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(149, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +185,9 @@ public class main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton7))
                 .addContainerGap())
         );
 
@@ -714,6 +726,8 @@ public class main extends javax.swing.JFrame {
                 if (i_usuario.getText().equals(object.getUsuario()) && i_contrasena.getText().equals(object.getContrasena())) {
                     i_barra.setMaximum((j.getlistajugador().indexOf(object) + 1));
                     usuario_no_encontrado = false;
+                    usuario_actual = i_usuario.getText();
+                    contra_actual = i_contrasena.getText();
                     break;
                 }
             }
@@ -909,6 +923,11 @@ public class main extends javax.swing.JFrame {
         usuario.setVisible(false);
         iniciar_crear.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        hilo_garage HG = new hilo_garage(tabla_garage,usuario_actual,contra_actual);
+        HG.start();
+    }//GEN-LAST:event_jButton7ActionPerformed
     public boolean validacion_nombre_usuario_mismo_nombre() {
         adminjugador j = new adminjugador("./Usuario.usr");
         for (jugador object : j.getlistajugador()) {
@@ -1001,7 +1020,8 @@ public class main extends javax.swing.JFrame {
             }
         });
     }
-
+    private String usuario_actual;
+    private String contra_actual;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Contrasena;
     private javax.swing.JTextField Correo;
@@ -1027,6 +1047,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1074,7 +1095,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField locacion;
     private javax.swing.JTextField longitud;
@@ -1085,6 +1105,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPanel pbar_iniciar;
     private javax.swing.JTextField precio_carro;
     private javax.swing.JTextField reconstruido;
+    private javax.swing.JTable tabla_garage;
     private javax.swing.JComboBox<String> tipo_carrera;
     private javax.swing.JPanel usuario;
     private javax.swing.JTextField velocidad_punta;

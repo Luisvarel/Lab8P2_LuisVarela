@@ -34,6 +34,14 @@ public class jugador implements Serializable {
         this.contrasena = contrasena;
     }
 
+    public ArrayList<carro> getC() {
+        return c;
+    }
+
+    public void setC(ArrayList<carro> c) {
+        this.c = c;
+    }
+
     public int getSaldo() {
         return saldo;
     }
