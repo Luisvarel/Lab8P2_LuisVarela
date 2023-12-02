@@ -4,16 +4,19 @@
  */
 package lab8p2_luisvarela;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Luis Andres Varela
  */
-public class concesionarias {
+public class concesionarias implements Serializable {
+
     private String nombre;
     private String locación;
-    private ArrayList<carro>c=new ArrayList();
+    private ArrayList<carro> c = new ArrayList();
+    private static final long SerialVersionUID = 333L;
 
     public concesionarias(String nombre, String locación) {
         this.nombre = nombre;

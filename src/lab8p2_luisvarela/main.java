@@ -288,7 +288,7 @@ public class main extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 815, Short.MAX_VALUE)
+            .addGap(0, 775, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,7 +345,7 @@ public class main extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Agregar circuito", jPanel5);
 
-        admin.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 820, 430));
+        admin.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 780, 430));
 
         jButton1.setText("<-");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -484,7 +484,12 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        if (concesionaria_locacion.getText()!=null&&concesionaria_nombre.getText()!=null) {
+            concesionarias temp=new concesionarias(concesionaria_nombre.getText(), concesionaria_locacion.getText());
+            adminConcesionarias c=new adminConcesionarias("./Concesionaria.cns");
+            c.agregar_concesionaria(temp);
+            c.escribirArchivo();
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
     public boolean validacion_nombre_usuario_mismo_nombre() {
         adminjugador j = new adminjugador("./Usuario.usr");
