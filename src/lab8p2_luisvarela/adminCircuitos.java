@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * @author Luis Andres Varela
  */
 public class adminCircuitos {
-     private ArrayList<carro> listajugador = new ArrayList();
+     private ArrayList<circuito> listajugador = new ArrayList();
     private File archivo = null;
 
    
@@ -26,11 +26,11 @@ public class adminCircuitos {
         archivo = new File(path);
     }
 
-    public ArrayList<carro> getLista() {
+    public ArrayList<circuito> getLista() {
         return listajugador;
     }
 
-    public void setlista(ArrayList<carro> listaAlumnos) {
+    public void setlista(ArrayList<circuito> listaAlumnos) {
         this.listajugador = listaAlumnos;
     }
 
@@ -42,19 +42,19 @@ public class adminCircuitos {
         this.archivo = archivo;
     }
 
-    public void agregar(carro a) {
+    public void agregar(circuito a) {
         listajugador.add(a);
     }
 
     public void cargarArchivo() {
         try {
             listajugador = new ArrayList();
-            carro temp;
+            circuito temp;
             if (archivo.exists()) {
                 FileInputStream entrada = new FileInputStream(archivo);
                 ObjectInputStream objeto = new ObjectInputStream(entrada);
                 try {
-                    while ((temp = (carro) objeto.readObject()) != null) {
+                    while ((temp = (circuito) objeto.readObject()) != null) {
                         listajugador.add(temp);
                     }
                 } catch (EOFException e) {
@@ -74,7 +74,7 @@ public class adminCircuitos {
         try {
             fw = new FileOutputStream(archivo);
             bw = new ObjectOutputStream(fw);
-            for (carro t : listajugador) {
+            for (circuito t : listajugador) {
                 bw.writeObject(t);
             }
             bw.flush();

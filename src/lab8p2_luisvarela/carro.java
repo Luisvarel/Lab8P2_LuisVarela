@@ -12,6 +12,7 @@ import java.util.Date;
  * @author Luis Andres Varela
  */
 public class carro {
+
     private boolean reconstruido;
     private String marca;
     private String modelo;
@@ -31,6 +32,7 @@ public class carro {
     private int Horsepower;
     private int Velocidad_Punta;
     private int Tiempo;
+    private static final long SerialVersionUID = 102L;
 
     public carro(boolean reconstruido, String marca, String modelo, Color color, int precio, String pais, int year_fabricación, int Horsepower, int Velocidad_Punta, int Tiempo) {
         this.reconstruido = reconstruido;
@@ -132,5 +134,5 @@ public class carro {
     public void setTiempo(int Tiempo) {
         this.Tiempo = Tiempo;
     }
-    
+
 }

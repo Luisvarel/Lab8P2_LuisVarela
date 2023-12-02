@@ -9,10 +9,12 @@ package lab8p2_luisvarela;
  * @author Luis Andres Varela
  */
 public class circuito {
+
     private int longitud;
     private int cantidad_curvas;
     private String tipo;
     private String locacion;
+    private static final long SerialVersionUID = 22L;
 
     public circuito(int longitud, int cantidad_curvas, String tipo, String locacion) {
         this.longitud = longitud;
@@ -55,5 +57,5 @@ public class circuito {
     public void setLocacion(String locacion) {
         this.locacion = locacion;
     }
-    
+
 }
