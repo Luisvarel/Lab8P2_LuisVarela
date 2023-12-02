@@ -4,6 +4,7 @@
  */
 package lab8p2_luisvarela;
 
+import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 
 /**
@@ -13,26 +14,36 @@ import javax.swing.JProgressBar;
 public class hilo_inciar extends Thread {
 
     private JProgressBar a;
+    private JPanel barra;
+    private JPanel usuario;
+    private JPanel iniciar_crear;
 
-    public hilo_inciar(JProgressBar a) {
+    public hilo_inciar(JProgressBar a, JPanel barra, JPanel usuario, JPanel iniciar_crear) {
         this.a = a;
+        this.barra = barra;
+        this.usuario = usuario;
+        this.iniciar_crear = iniciar_crear;
     }
 
     @Override
     public void run() {
         adminjugador j = new adminjugador("./Usuario.usr");
         j.cargarArchivo();
-        a.setStringPainted(true);
-        System.out.println(j.getlistajugador().size());
-        for (int i = 1; i <= j.getlistajugador().size(); i++) {
+        barra.setVisible(true);
+        for (int i = 1; i <= a.getMaximum(); i++) {
             a.setValue(i);
-            a.setString("aaa");
-
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-
             }
+        }
+        if (j.getlistajugador().size() < a.getMaximum()) {
+            barra.setVisible(false);
+            usuario.setVisible(false);
+            iniciar_crear.setVisible(true);
+        } else {
+            barra.setVisible(false);
+            usuario.setVisible(true);
         }
     }
 

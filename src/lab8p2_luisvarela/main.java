@@ -25,6 +25,9 @@ public class main extends javax.swing.JFrame {
         admin.setVisible(false);
         adminjugador j = new adminjugador("./Usuario.usr");
         j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "a", "a"));
+        j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "s", "s"));
+        j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "d", "d"));
+        j.getlistajugador().add(new jugador("a", "a", "a", new Date(), "f", "f"));
         i_barra.setStringPainted(true);
         j.escribirArchivo();
 
@@ -71,7 +74,6 @@ public class main extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         admin = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -88,6 +90,29 @@ public class main extends javax.swing.JFrame {
         curvas = new javax.swing.JTextField();
         locacion = new javax.swing.JTextField();
         tipo_carrera = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        cb_concesionaria = new javax.swing.JComboBox<>();
+        jLabel20 = new javax.swing.JLabel();
+        marca_c = new javax.swing.JComboBox<>();
+        jLabel21 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jYearChooser1 = new com.toedter.calendar.JYearChooser();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        pais_c = new javax.swing.JComboBox<>();
+        jButton5 = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
+        jComboBox5 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -284,18 +309,11 @@ public class main extends javax.swing.JFrame {
         admin.setPreferredSize(new java.awt.Dimension(790, 540));
         admin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 775, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 403, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("Agregar carro", jPanel1);
+        jTabbedPane2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane2StateChanged(evt);
+            }
+        });
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -344,6 +362,86 @@ public class main extends javax.swing.JFrame {
         jPanel5.add(tipo_carrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 147, 88, -1));
 
         jTabbedPane2.addTab("Agregar circuito", jPanel5);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 150, 32));
+
+        jLabel18.setText("Velocidad_Punta");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 90, 10));
+
+        jLabel19.setText("Pais");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 30, -1));
+
+        jPanel1.add(cb_concesionaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 150, 32));
+
+        jLabel20.setText("Marca");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 40, 10));
+
+        marca_c.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                marca_cMouseClicked(evt);
+            }
+        });
+        jPanel1.add(marca_c, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 150, 32));
+
+        jLabel21.setText("Modelo");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 40, 10));
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 150, 30));
+
+        jLabel22.setText("Color");
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 40, 10));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 150, 30));
+
+        jLabel24.setText("Precio");
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 40, 10));
+
+        jYearChooser1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(jYearChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 90, 30));
+
+        jLabel25.setText(" Año de fabricación");
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 100, 10));
+
+        jLabel26.setText("Horsepower");
+        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 70, 10));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 100, 30));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 100, 30));
+
+        jLabel27.setText("Concesionaria");
+        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
+
+        pais_c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usa", "Alemania", "Francia", "Japon", "Italia", "Uk", "Sweden" }));
+        pais_c.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pais_cMouseClicked(evt);
+            }
+        });
+        jPanel1.add(pais_c, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 150, 32));
+
+        jButton5.setText("listo");
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 160, 50));
+
+        jLabel28.setText("Tiempo");
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, -1, -1));
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0 a 60 km/h ", "0 a 100 km/h" }));
+        jPanel1.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 150, 32));
+
+        jTabbedPane2.addTab("Agregar carro", jPanel1);
 
         admin.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 780, 430));
 
@@ -446,26 +544,25 @@ public class main extends javax.swing.JFrame {
 
     private void ListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListoActionPerformed
         if (i_usuario.getText() != null && i_contrasena.getText() != null) {
-            hilo_inciar h_i = new hilo_inciar(i_barra);
+            hilo_inciar h_i = new hilo_inciar(i_barra, pbar_iniciar, usuario, iniciar_crear);
             adminjugador j = new adminjugador("./Usuario.usr");
             j.cargarArchivo();
-            i_barra.setMaximum(j.getlistajugador().size());
+            boolean usuario_no_encontrado = true;
             for (jugador object : j.getlistajugador()) {
                 if (i_usuario.getText().equals(object.getUsuario()) && i_contrasena.getText().equals(object.getContrasena())) {
                     i_barra.setMaximum((j.getlistajugador().indexOf(object) + 1));
+                    usuario_no_encontrado = false;
                     break;
                 }
             }
-
-            i_barra.setMinimum(0);
-            h_i.start();
-            boolean acabo = false;
-            while (!acabo) {
-                if (i_barra.getValue() == i_barra.getMaximum()) {
-                    acabo = true;
-                    System.out.println("ya");
-                }
+            if (usuario_no_encontrado) {
+                i_barra.setMaximum((j.getlistajugador().size() + 1));
             }
+            i_barra.setMinimum(0);
+            iniciar_crear.setVisible(false);
+            pbar_iniciar.setVisible(true);
+            h_i.start();
+
             if (i_usuario.getText().equals("admin") && i_contrasena.getText().equals("admin")) {
 
             }
@@ -484,13 +581,60 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if (concesionaria_locacion.getText()!=null&&concesionaria_nombre.getText()!=null) {
-            concesionarias temp=new concesionarias(concesionaria_nombre.getText(), concesionaria_locacion.getText());
-            adminConcesionarias c=new adminConcesionarias("./Concesionaria.cns");
+        if (concesionaria_locacion.getText() != null && concesionaria_nombre.getText() != null) {
+            concesionarias temp = new concesionarias(concesionaria_nombre.getText(), concesionaria_locacion.getText());
+            adminConcesionarias c = new adminConcesionarias("./Concesionaria.cns");
             c.agregar_concesionaria(temp);
             c.escribirArchivo();
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
+        adminConcesionarias c = new adminConcesionarias("./Concesionaria.cns");
+        c.cargarArchivo();
+        cb_concesionaria.removeAll();
+        if (!c.getListaConcesionaria().isEmpty()) {
+            for (concesionarias object : c.getListaConcesionaria()) {
+                cb_concesionaria.addItem(object.getNombre());
+            }
+        }
+    }//GEN-LAST:event_jTabbedPane2StateChanged
+
+    private void pais_cMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pais_cMouseClicked
+        String pais = ((String) pais_c.getSelectedItem());
+        marca_c.removeAllItems();
+        switch (pais) {
+            case "Japon" -> {
+                marca_c.addItem("Subaru");
+                marca_c.addItem("Toyota");
+                marca_c.addItem("Honda");
+                marca_c.addItem("Mitsubishi");
+                marca_c.addItem("Nissan");
+            }
+            case "Italia" -> {
+                marca_c.addItem("Ferrari");
+                marca_c.addItem("Lamborghini");
+            }
+            case "USA" -> {
+                marca_c.addItem("Ford");
+                marca_c.addItem("Chevarolet");
+                marca_c.addItem("Acorh");
+            }
+            case "Alemania" -> {
+                marca_c.addItem("BWW");
+                marca_c.addItem("Mercedes-Benz");
+                marca_c.addItem("VW");
+                marca_c.addItem("Audi");
+                marca_c.addItem("Porsche");
+            }
+            default ->
+                throw new AssertionError();
+        }
+    }//GEN-LAST:event_pais_cMouseClicked
+
+    private void marca_cMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_marca_cMouseClicked
+        
+    }//GEN-LAST:event_marca_cMouseClicked
     public boolean validacion_nombre_usuario_mismo_nombre() {
         adminjugador j = new adminjugador("./Usuario.usr");
         for (jugador object : j.getlistajugador()) {
@@ -591,6 +735,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField Pais;
     private javax.swing.JTextField Usuario;
     private javax.swing.JPanel admin;
+    private javax.swing.JComboBox<String> cb_concesionaria;
     private javax.swing.JTextField concesionaria_locacion;
     private javax.swing.JTextField concesionaria_nombre;
     private javax.swing.JTextField curvas;
@@ -603,6 +748,9 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -612,7 +760,18 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -626,12 +785,19 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private com.toedter.calendar.JYearChooser jYearChooser1;
     private javax.swing.JTextField locacion;
     private javax.swing.JTextField longitud;
+    private javax.swing.JComboBox<String> marca_c;
     private javax.swing.JTextField nombre;
+    private javax.swing.JComboBox<String> pais_c;
     private javax.swing.JPanel pbar_iniciar;
     private javax.swing.JTextField tipo_carrera;
     private javax.swing.JPanel usuario;
