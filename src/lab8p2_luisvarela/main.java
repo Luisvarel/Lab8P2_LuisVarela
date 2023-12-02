@@ -19,7 +19,7 @@ public class main extends javax.swing.JFrame {
      */
     public main() {
         initComponents();
-        iniciar_crear.setVisible(false   );
+        iniciar_crear.setVisible(false);
         pbar_iniciar.setVisible(false);
         usuario.setVisible(false);
         admin.setVisible(true);
@@ -424,7 +424,7 @@ public class main extends javax.swing.JFrame {
         jLabel27.setText("Concesionaria");
         jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
 
-        pais_c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usa", "Alemania", "Japon", "Italia" }));
+        pais_c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USA", "Alemania", "Japon", "Italia" }));
         pais_c.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pais_cMouseClicked(evt);
@@ -629,6 +629,8 @@ public class main extends javax.swing.JFrame {
                 marca_c.addItem("Porsche");
                 break;
             default:
+                System.out.println("Valor inesperado de país: " + pais);
+
                 throw new AssertionError();
         }
     }//GEN-LAST:event_pais_cMouseClicked
@@ -672,10 +674,11 @@ public class main extends javax.swing.JFrame {
                 modelo_c.addItem("Mustang");
                 modelo_c.addItem("F-150");
             }
-            case "Chevarolet" -> {
+            case "Chevrolet" -> {
                 modelo_c.addItem("Camaro");
                 modelo_c.addItem("Bel-Hir");
             }
+
             case "Acorh" -> {
                 modelo_c.addItem("NSX");
             }
@@ -684,12 +687,13 @@ public class main extends javax.swing.JFrame {
                 modelo_c.addItem("X6");
                 modelo_c.addItem("M5");
             }
-            case "Mercedes" -> {
+            case "Mercedes-Benz" -> {
                 modelo_c.addItem("Clase A");
                 modelo_c.addItem("GLA");
                 modelo_c.addItem("GLC");
                 modelo_c.addItem("GLS");
             }
+
             case "VW" -> {
                 modelo_c.addItem("Beetle");
             }
