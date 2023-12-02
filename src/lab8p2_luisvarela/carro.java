@@ -101,11 +101,11 @@ public class carro {
         this.pais = pais;
     }
 
-    public Date getYear_fabricación() {
+    public int getYear_fabricación() {
         return year_fabricación;
     }
 
-    public void setYear_fabricación(Date year_fabricación) {
+    public void setYear_fabricación(int year_fabricación) {
         this.year_fabricación = year_fabricación;
     }
 

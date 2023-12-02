@@ -18,6 +18,14 @@ public class concesionarias implements Serializable {
     private ArrayList<carro> c = new ArrayList();
     private static final long SerialVersionUID = 333L;
 
+    public ArrayList<carro> getC() {
+        return c;
+    }
+
+    public void setC(ArrayList<carro> c) {
+        this.c = c;
+    }
+
     public concesionarias(String nombre, String locación) {
         this.nombre = nombre;
         this.locación = locación;

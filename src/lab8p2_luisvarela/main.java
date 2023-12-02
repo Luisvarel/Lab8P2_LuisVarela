@@ -598,7 +598,7 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -732,24 +732,36 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_marca_cMouseClicked
 
     private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
-       Color color=JColorChooser.showDialog(this, "Color del carro", Color.yellow);
-       carro_color.setBackground(color);
+        Color color = JColorChooser.showDialog(this, "Color del carro", Color.yellow);
+        carro_color.setBackground(color);
     }//GEN-LAST:event_jLabel23MouseClicked
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        boolean recontruido_b=false;
+        adminCarro ca = new adminCarro("./Carros.car");
+        adminConcesionarias c = new adminConcesionarias("./Concesionaria.cns");
+        boolean recontruido_b = false;
         if (reconstruido.getText().equalsIgnoreCase("si")) {
-            recontruido_b=true;
-        }else{
-            recontruido_b=false;
+            recontruido_b = true;
+        } else {
+            recontruido_b = false;
         }
-        int temp1=0;
-        if (cb_tiempo.getSelectedIndex()==0) {
-            temp1=60;
-        }else{
-            temp1=100;
+        int temp1 = 0;
+        if (cb_tiempo.getSelectedIndex() == 0) {
+            temp1 = 60;
+        } else {
+            temp1 = 100;
         }
-        carro temp=new carro(recontruido_b, (String)marca_c.getSelectedItem(),(String) modelo_c.getSelectedItem(), carro_color.getBackground(),  Integer.parseInt(precio_carro.getText()), pais_c.getSelectedItem(), year.getYear(), Integer.parseInt(caballero_fuerza1.getText()), Integer.parseInt(velocidad_punta.getText()),temp1 );
+
+        carro temp = new carro(recontruido_b, (String) marca_c.getSelectedItem(), (String) modelo_c.getSelectedItem(), carro_color.getBackground(), Integer.parseInt(precio_carro.getText()), (String) pais_c.getSelectedItem(), year.getYear(), Integer.parseInt(caballero_fuerza1.getText()), Integer.parseInt(velocidad_punta.getText()), temp1);
+        for (concesionarias object : c.getListaConcesionaria()) {
+            if (object.getNombre().equals((String) cb_concesionaria.getSelectedItem())) {
+                c.getListaConcesionaria().get(c.getListaConcesionaria().indexOf(object)).getC().add(temp);
+            }
+
+        }
+        ca.getLista().add(temp);
+        ca.escribirArchivo();
+        c.escribirArchivo();
     }//GEN-LAST:event_jButton5ActionPerformed
     public boolean validacion_nombre_usuario_mismo_nombre() {
         adminjugador j = new adminjugador("./Usuario.usr");
